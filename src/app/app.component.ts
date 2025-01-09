@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'ng-env';
+  readonly env: string = typeof(ENVIRONMENT_NAME) === 'string' ? ENVIRONMENT_NAME : 'development';
+
+  constructor() {
+    console.log('Environment:', this.env);
+  }
 }
