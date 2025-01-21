@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+declare global {
+  const ENVIRONMENT_NAME: string;
+}
+
 @Component({
   selector: 'app-root',
   imports: [],
